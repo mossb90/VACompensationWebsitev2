@@ -18,12 +18,21 @@ namespace VACompWeb.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+
+        [HttpGet]
+        public IActionResult CompensationCalc()
         {
             return View();
         }
 
-        public IActionResult CompensationCalc()
+        //[HttpPost]
+        //public IActionResult CompensationCalc(VeteranProfileModel model)
+        //{
+        //    if (model.OperationType == OperationType.Addition)
+        //        model.Result = model.NumberA + model.NumberB;
+        //    return View(model);
+        //}
+        public IActionResult Index()
         {
             return View();
         }
