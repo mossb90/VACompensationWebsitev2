@@ -1,0 +1,61 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<h4>@ViewData["Title"]</h4>
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <form id="profile-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.FirstName"></label>
+                <input asp-for="Input.FirstName" class="form-control"  />
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.LastName"></label>
+                <input asp-for="Input.LastName" class="form-control"  />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DisabilityRating"></label>
+                <input asp-for="Input.DisabilityRating" class="form-control"  />
+                <span asp-validation-for="Input.DisabilityRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.DependencyStatus"></label>
+                <input asp-for="Input.DependencyStatus" class="form-control"  />
+                <span asp-validation-for="Input.DependencyStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.AddChildUnder18"></label>
+                <input asp-for="Input.AddChildUnder18" class="form-control"  />
+                <span asp-validation-for="Input.AddChildUnder18" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.AddChild18Plus"></label>
+                <input asp-for="Input.AddChild18Plus" class="form-control"  />
+                <span asp-validation-for="Input.AddChild18Plus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.AidSupport"></label>
+                <input asp-for="Input.AidSupport" class="form-control"  />
+                <span asp-validation-for="Input.AidSupport" class="text-danger"></span>
+            </div>
+
+            <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -20,8 +20,9 @@ namespace VACompWebsite.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DBAuthContextConnection")));
 
-                services.AddDefaultIdentity<VACompUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<VACompUser>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddEntityFrameworkStores<DBAuthContext>();
+            
             });
         }
     }
