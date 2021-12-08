@@ -14,15 +14,15 @@ namespace VACompWeb.Services
     {
         
 
-        public VAUser GetVeteran(string id)
-        {
-            throw new NotImplementedException();
-        }
+        //public VAUser GetVeteran(string id)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public VAUser UpdateVeteran(VAUser vetUpdate)
-        {
-            throw new NotImplementedException();
-        }
+        //public VAUser UpdateVeteran(VAUser vetUpdate)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #region Constants for calc 
         public const float DisabilityRating10 = 152.64f;

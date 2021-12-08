@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VACompWeb.Services;
 
 namespace VACompWeb
 {
@@ -25,6 +26,7 @@ namespace VACompWeb
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<IVeteranRepository, VeteranRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

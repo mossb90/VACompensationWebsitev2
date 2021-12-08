@@ -13,7 +13,7 @@ namespace VACompWeb.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<VAUser> _userManager;
-        private readonly SignInManager<VAUser> _signInManager;
+        //private readonly SignInManager<VAUser> _signInManager;
 
            
 
