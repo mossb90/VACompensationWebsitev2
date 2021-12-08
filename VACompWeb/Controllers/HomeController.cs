@@ -19,11 +19,11 @@ namespace VACompWeb.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult CompensationCalc()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult CompensationCalc()
+        //{
+        //    return View();
+        //}
 
         //[HttpPost]
         //public IActionResult CompensationCalc(VeteranProfileModel model)

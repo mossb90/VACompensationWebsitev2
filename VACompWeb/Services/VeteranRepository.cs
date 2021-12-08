@@ -4,31 +4,25 @@ using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using VACompWeb.Models;
-
+using VACompWeb.Areas.Identity.Data;
+using VACompWeb.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace VACompWeb.Services
 {
     public class VeteranRepository : IVeteranRepository
     {
-        public VeteranRepository()
+        
+
+        public VAUser GetVeteran(string id)
         {
+            throw new NotImplementedException();
         }
 
-        //public void AddVeteran(VeteranProfileModel vet)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-
-        //public VeteranProfileModel GetVeteran(int vetID)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public VeteranProfileModel UpdateVeteran(VeteranProfileModel vetUpdate)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public VAUser UpdateVeteran(VAUser vetUpdate)
+        {
+            throw new NotImplementedException();
+        }
 
         #region Constants for calc 
         public const float DisabilityRating10 = 152.64f;

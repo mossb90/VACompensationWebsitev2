@@ -1,0 +1,65 @@
+﻿@*@using VACompWeb.Areas.Identity.Data*@
+@model VACompWeb.Areas.Identity.Data.VAUser
+
+    @*@{
+    ViewData["Title"] = "CompensationCalc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+
+
+
+    <div class="text-center">
+        <h1 class="display-4">Compensation Calculator</h1>
+        <div class="row align-items-center">
+
+
+            <div class="col-md-8">
+                @*<form asp-route-returnUrl="@Model.ReturnUrl" method="post">*@
+                <form>
+
+                    <div class="form-group">
+                        <label asp-for="DependencyStatus"></label>
+                        <input asp-for="DependencyStatus" items="Html.GetEnumSelectList<DepStatus>()" class="form-control" />
+                        <span asp-validation-for="DependencyStatus" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DisabilityRating"></label>
+                        <input asp-for="DisabilityRating" class="form-control" />
+                        <span asp-validation-for="DisabilityRating" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AddChildUnder18"></label>
+                        <input asp-for="AddChildUnder18" class="form-control" />
+                        <span asp-validation-for="AddChildUnder18" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AddChild18Plus"></label>
+                        <input asp-for="AddChild18Plus" class="form-control" />
+                        <span asp-validation-for="AddChild18Plus" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AidSupport"></label>
+                        <input asp-for="AidSupport" class="form-control" />
+                        <span asp-validation-for="AidSupport" class="text-danger"></span>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+
+                    <div class="form-group">
+                        <label>Total</label>
+                        <input @*asp-for="CompTotal"*@ class="form-control" />
+
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
