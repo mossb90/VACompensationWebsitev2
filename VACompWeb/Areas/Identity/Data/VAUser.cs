@@ -50,7 +50,7 @@ namespace VACompWeb.Areas.Identity.Data
         [PersonalData]
         [Required]
         [Range(10, 100)]
-        [RegularExpression("[1 - 9][0 - 9] * 0")]
+        //[RegularExpression("[1 - 9][0 - 9] * 0")]
         public int DisabilityRating { get; set; }
 
 
@@ -75,7 +75,9 @@ namespace VACompWeb.Areas.Identity.Data
         public bool AidSupport { get; set; }
 
 
-        
+        [PersonalData]
+        [Column(TypeName = "decimal")]
+        public float MonthlyComp { get; set; }
 
         //public VAUser User { get; internal set; }
     }
