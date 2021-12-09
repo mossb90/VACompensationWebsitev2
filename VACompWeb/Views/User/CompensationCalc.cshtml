@@ -1,5 +1,6 @@
 ﻿@using VACompWeb.Controllers
 @using VACompWeb.Services
+@using VACompWeb.Areas.Identity.Data
 @model VACompWeb.Areas.Identity.Data.VAUser
 
 
@@ -21,7 +22,7 @@
 
                     <div class="form-group">
                         <label asp-for="DependencyStatus"></label>
-                        <input asp-for="DependencyStatus" items="Html.GetEnumSelectList<DepStatus>()" class="form-control" />
+                        <select asp-for="DependencyStatus" asp-items="Html.GetEnumSelectList<DepStatus>()" class="form-control"><option selected="selected" value="">Select</option></select>
                         <span asp-validation-for="DependencyStatus" class="text-danger"></span>
                     </div>
 
