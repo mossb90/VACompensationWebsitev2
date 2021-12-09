@@ -74,6 +74,9 @@ namespace VACompWeb.Areas.Identity.Data
         [Column(TypeName = "bit")]
         public bool AidSupport { get; set; }
 
+
+        
+
         //public VAUser User { get; internal set; }
     }
 }

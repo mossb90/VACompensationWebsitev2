@@ -1,4 +1,7 @@
-﻿@model VACompWeb.Areas.Identity.Data.VAUser
+﻿@using VACompWeb.Controllers
+@using VACompWeb.Services
+@model VACompWeb.Areas.Identity.Data.VAUser
+
 
     @{
     ViewData["Title"] = "CompensationCalc";
@@ -47,18 +50,20 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary">Calculate</button>
+                    <button type="submit" asp-action="Calculate" class="btn btn-primary">Calculate</button>
 
-                    <div class="form-group">
+                </form>
+
+                    
                         <label>Total</label>
-                        <input @*asp-for="CompTotal"*@ class="form-control" />
+                        @*<input type="number" asp-for="result" class="form-control" />*@
 
                     </div>
 
 
 
-                </form>
+                
             </div>
         </div>
-    </div>
+    
 

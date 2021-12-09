@@ -7,6 +7,7 @@ using VACompWeb.Areas.Identity.Data;
 using VACompWeb.Areas.Identity.Pages.Account.Manage;
 using VACompWeb.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VACompWeb.Controllers
 {
@@ -14,18 +15,26 @@ namespace VACompWeb.Controllers
     {
         private readonly UserManager<VAUser> _userManager;
         //private readonly SignInManager<VAUser> _signInManager;
-
-           
-
         private IVeteranRepository _veteranRepository;
+
+        int DisabilityRating;
+        DepStatus DependencyStatus;
+        int AddChildUnder18;
+        int AddChild18Plus;
+        bool AidSupport;
+        float result; 
+
         public UserController(IVeteranRepository repository, UserManager<VAUser> userManager)
         {
             _userManager = userManager;
-           
             _veteranRepository = repository;
+         
         }
 
 
+
+
+        [Authorize]
         public async Task<IActionResult> CompensationCalcAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -37,10 +46,46 @@ namespace VACompWeb.Controllers
                 AddChildUnder18 = user.AddChildUnder18,
                 AddChild18Plus = user.AddChild18Plus,
                 AidSupport = user.AidSupport
-            };
-
+            };    
+            
             return View(viewModel);
         }
+
+
+        public IActionResult Calculate()
+        {
+            //var user = await _userManager.GetUserAsync(User);
+
+           //float result = _veteranRepository.CalculateMonthlyCompensation((int)user.DependencyStatus, user.AddChildUnder18, user.AddChild18Plus, user.DisabilityRating, user.AidSupport);
+            result = _veteranRepository.CalculateMonthlyCompensation((int)DependencyStatus,AddChildUnder18, AddChild18Plus, DisabilityRating, AidSupport);
+            return View(result);
+        }
+
+
+
+
+        //public async Task<IActionResult> CompensationCalcAsync()
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
+
+        //    var viewModel = new VAUser
+        //    {
+        //        DisabilityRating = user.DisabilityRating,
+        //        DependencyStatus = user.DependencyStatus,
+        //        AddChildUnder18 = user.AddChildUnder18,
+        //        AddChild18Plus = user.AddChild18Plus,
+        //        AidSupport = user.AidSupport
+        //    };
+
+        //    return View(viewModel);
+        //}
+
+      
+
+
+
+
+
 
         // add logic for whether authenticated or not
 
