@@ -32,9 +32,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Input.DependencyStatus"></label>
-                <input asp-for="Input.DependencyStatus" class="form-control"  />
-                <span asp-validation-for="Input.DependencyStatus" class="text-danger"></span>
-            </div>
+                <select asp-for="Input.DependencyStatus" asp-items="Html.GetEnumSelectList<DepStatus>()" class="form-control">
+                    <option selected="selected" value="">Select</option></select>
+                    <span asp-validation-for="Input.DependencyStatus" class="text-danger"></span>
+</div>
             <div class="form-group">
                 <label asp-for="Input.AddChildUnder18"></label>
                 <input asp-for="Input.AddChildUnder18" class="form-control"  />

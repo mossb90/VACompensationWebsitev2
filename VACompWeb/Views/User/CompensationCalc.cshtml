@@ -4,67 +4,74 @@
 @model VACompWeb.Areas.Identity.Data.VAUser
 
 
-    @{
+@{
     ViewData["Title"] = "CompensationCalc";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+}
 
 
 
-    <div class="text-center">
-        <h1 class="display-4">Compensation Calculator</h1>
-        <div class="row align-items-center">
-
-
-            <div class="col-md-8">
-                @*<form asp-route-returnUrl="@Model.ReturnUrl" method="post">*@
-                <form method="post">
-
-                    <div class="form-group">
-                        <label asp-for="DependencyStatus"></label>
-                        <select asp-for="DependencyStatus" asp-items="Html.GetEnumSelectList<DepStatus>()" class="form-control"><option selected="selected" value="">Select</option></select>
-                        <span asp-validation-for="DependencyStatus" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="DisabilityRating"></label>
-                        <input asp-for="DisabilityRating" class="form-control" />
-                        <span asp-validation-for="DisabilityRating" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="AddChildUnder18"></label>
-                        <input asp-for="AddChildUnder18" class="form-control" />
-                        <span asp-validation-for="AddChildUnder18" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="AddChild18Plus"></label>
-                        <input asp-for="AddChild18Plus" class="form-control" />
-                        <span asp-validation-for="AddChild18Plus" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="AidSupport"></label>
-                        <input asp-for="AidSupport" class="form-control" />
-                        <span asp-validation-for="AidSupport" class="text-danger"></span>
-                    </div>
-
-
-                    <button type="submit" asp-action="Calculate" class="btn btn-primary">Calculate</button>
-
-                </form>
-
-                    
-                        <label>Total</label>
-                        <input type="number" asp-for="MonthlyComp" class="form-control" />
-
-                    </div>
-
-
-
-                
-            </div>
-        </div>
+<div class="text-center">
     
+    <h1 class="display-4">Compensation Calculator</h1>
+    <div class="row align-items-center">
 
+
+        <div class="col-md-8">
+
+            <form method="post">
+
+                <div class="form-group">
+                    <label asp-for="DependencyStatus"></label>
+                    <select asp-for="DependencyStatus" asp-items="Html.GetEnumSelectList<DepStatus>()" class="form-control"><option selected="selected" value="">Select</option></select>
+                    <span asp-validation-for="DependencyStatus" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DisabilityRating"></label>
+                    <input asp-for="DisabilityRating" class="form-control" />
+                    <span asp-validation-for="DisabilityRating" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddChildUnder18"></label>
+                    <input asp-for="AddChildUnder18" class="form-control" />
+                    <span asp-validation-for="AddChildUnder18" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddChild18Plus"></label>
+                    <input asp-for="AddChild18Plus" class="form-control" />
+                    <span asp-validation-for="AddChild18Plus" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AidSupport"></label>
+                    <input asp-for="AidSupport" class="form-control" />
+                    <span asp-validation-for="AidSupport" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" asp-action="Calculate" class="btn btn-primary">Calculate</button>
+                <button type="submit" id="Update" asp-action="UpdateProfile" class="btn btn-primary">Update Profile</button>
+
+            </form>
+
+
+            <label>Total</label>
+            <input type="number" asp-for="MonthlyComp" class="form-control" />
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
