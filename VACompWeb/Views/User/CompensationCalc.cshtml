@@ -11,64 +11,190 @@
 
 
 
-<div class="text-center">
-    
-    <h1 class="display-4">Compensation Calculator</h1>
-    <div class="row align-items-center">
 
 
-        <div class="col-md-8">
+
+<div class="text-left">
+
+    <h1 class="display-6">Compensation Calculator</h1>
+
+
+    <div class="alert alert-success alert-dismissable" role="alert" style="display:none">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        Success! Profile Updated.
+    </div>
+
+
+    <div class="row align-items-left ">
+
+
+        <div class="col-md-5 col-sm-12">
 
             <form method="post">
 
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <label asp-for="DependencyStatus"></label>
-                    <select asp-for="DependencyStatus" asp-items="Html.GetEnumSelectList<DepStatus>()" class="form-control"><option selected="selected" value="">Select</option></select>
+                    <select  asp-for="DependencyStatus" asp-items="Html.GetEnumSelectList<DepStatus>()" class="form-control mt-1" data-toggle="tooltip" data-placement="bottom" title="Check the help boxes on the right under Aid Support"><option selected="selected" value="" >Select</option></select>
                     <span asp-validation-for="DependencyStatus" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="DisabilityRating"></label>
-                    <input asp-for="DisabilityRating" class="form-control" />
+                    <input asp-for="DisabilityRating" class="form-control  mt-1" data-toggle="tooltip" data-placement="bottom" title="Check the help boxes on the right under Aid Support"/>
                     <span asp-validation-for="DisabilityRating" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="AddChildUnder18"></label>
-                    <input asp-for="AddChildUnder18" class="form-control" />
+                    <input asp-for="AddChildUnder18" class="form-control  mt-1" data-toggle="tooltip" data-placement="bottom" title="Check the help boxes on the right under Aid Support"/>
                     <span asp-validation-for="AddChildUnder18" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="AddChild18Plus"></label>
-                    <input asp-for="AddChild18Plus" class="form-control" />
+                    <input asp-for="AddChild18Plus" class="form-control  mt-1" data-toggle="tooltip" data-placement="bottom" title="Check the help boxes on the right under Aid Support"/>
                     <span asp-validation-for="AddChild18Plus" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="AidSupport"></label>
-                    <input asp-for="AidSupport" class="form-control" />
+                    <label asp-for="AidSupport" ></label>
+                    <input asp-for="AidSupport" class="form-control"  />
                     <span asp-validation-for="AidSupport" class="text-danger"></span>
                 </div>
 
 
-                <button type="submit" asp-action="Calculate" class="btn btn-primary">Calculate</button>
-                <button type="submit" id="Update" asp-action="UpdateProfile" class="btn btn-primary">Update Profile</button>
+                <button type="submit" asp-action="Calculate" class="btn btn-info">Calculate</button>
 
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <button type="submit" id="Update" asp-action="UpdateProfile" class="btn btn-info">Update Profile</button>
+                }
             </form>
 
 
-            <label>Total</label>
-            <input type="number" asp-for="MonthlyComp" class="form-control" />
 
         </div>
+        <div class="col-md 2">
+
+        </div>
+        <div class="col-md-4 col-sm-12 mt-2">
+            <label>Estimated Total</label>
+            <input type="number" asp-for="MonthlyComp" class="form-control" />
+
+
+
+            <div id="accordion" class="mt-3">
+                <div class="card bg-info text-white">
+                    <div class="card-header bg-info text-white">
+                        <a class="card-link bg-info text-white" data-toggle="collapse" href="#collapseOne">
+                            Hide Help Boxes
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            How Does the VA Determine Ratings?
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            To determine the amount of a veteran’s VA disability benefit, the VA needs to quantify the severity of the disability. When you submit a claim for VA disability benefits, it’s imperative to include all relevant medical documentation and evidence about your medical condition. After a medical examination and thorough review of the medical evidence, the VA assigns a rating based on the severity of the veteran’s disability.
+
+                            This VA disability rating ranges from 0 to 100% in 10-percent increments, and it is used to calculate the level of compensation the veteran will receive.
+
+                            You can receive additional monthly compensation if you are severely disabled, have lost a limb, have a spouse who also is disabled – or if you have a spouse, dependent child, or dependent parent within your immediate household.
+
+                            In some cases, a veteran may submit a VA claim related to multiple disabilities. In these cases, the VA will use a combined ratings table to determine a combined disability rating and VA benefit amount that reflects all rated medical conditions.
+
+                            Combined ratings can be tricky since the percentages are not simply added together. It’s intuitive to think that if a veteran has one disability rated at 40% and another rated at 30%, the combined rating would be 70%, but that isn’t the case. Instead, the VA will first rank the disabilities in order of severity.
+
+                            If you have multiple disabilities, the VA starts with your most severe disability rating. For additional disabilities, each rating is roughly cut in half before being added. The final percentage is rounded to the nearest 10%. For example, if a veteran has three disabilities: one disability rated at 40%, one at 30%, and another at 20%, the combined disability rating is roughly: 40% + 15% + 10% = 65%. That gets rounded up, so the final rating is 70%. For a more precise calculation, you can use the combined ratings table on VA.gov.
+
+                            The final number is always rounded to the nearest 10%. Any percentage that ends in 5 or higher is rounded up, not rounded down. A 34% rating is rounded down to 30%, but a 35% rating is rounded up to 40%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            How To Calculate Your VA Disability Payment
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            You can calculate your expected veterans disability benefits using the information provided by the VA. First, using the compensation tables presented here, find your VA compensation rate for your specific disability rating. Using the basic rates table, you should be able to find the appropriate amount for your disability rating and your dependent status.
+
+                            For example, if you are a disabled veteran with a 50% disability rating, with no spouse and no dependent children, your expected basic VA disability rate is $958.44, as outlined in the chart.
+
+                            However, if your spouse receives VA Aid and Attendance benefits or you have more than one dependent child, you can calculate increases to your standard monthly pay in the Added Amounts section above.
+
+                            Ready for a more complicated calculation? Let’s consider a veteran with a 50% disability rating who has four dependent children and a spouse who receives Aid and Attendance.
+
+                            Start with the basic rate of $1,118.44 for a 50% disabled veteran with a spouse and one child
+                            Add the appropriate amount of ($46.00 x 3) for three additional children under age 18, using the Added Amounts table: $1,118.44 + $138.00 = $1,256.44
+                            Finally, factor in the additional amount for a spouse receiving Aid and Attendance: $86.00
+                            For a veteran with a 50% disability rating, four dependent children, and a spouse receiving Aid and Attendance: The final total benefit amount is $1342.44.
+
+                            Dependent parents also are considered when calculating your monthly benefit. For example, if you are rated at 70% disabled, have no dependent children, but are responsible for two dependent parents and a spouse, you’ll start with the basic amount of $1,867.95.
+
+                            You’ll notice in these charts that you can calculate benefits for just about any combination of household makeups and disability levels so that you can anticipate changes to your veteran benefits.
+                        </div>
+                    </div>
+                </div>
 
 
 
 
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            What Is the Aid and Attendance Benefit?
+                        </a>
+                    </div>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            The VA’s Aid and Attendance benefit is designed to help lessen the financial burden of qualified veterans and/or their surviving family members who need additional help with day-to-day activities. This benefit is an additional payment added to existing disability benefit amounts.
+
+                            Specifically, the Aid and Attendance program provides tax-free payments to veterans who served during wartime. In addition to veterans themselves, veterans’ surviving spouses (until remarriage) and dependent children also are eligible to receive Aid and Attendance benefits. To be eligible for this extra benefit, the veteran or their surviving spouse or dependents must meet specified income and asset thresholds.
+
+                            Aid and Attendance is one of the lesser-known VA benefits. It is a VA medical rating that allows for additional financial support in the case of veterans, surviving spouses, or qualifying dependents who need the regular aid and attendance of a caregiver.
+
+                            If a disabled veteran, surviving spouse, or dependent needs assistance with daily activities like bathing, feeding, and dressing, they may qualify for an Aid and Attendance benefit payment. In addition, if a veteran or family member is confined to a bed because of a rated, service-connected disability or medical condition and/or is a patient in a nursing home or suffers from limited eyesight, an additional Aid and Attendance benefit may be approved by the VA.
+
+                            The extra payments associated with Aid and Attendance can vary widely. For 2022, monthly Aid and Attendance payments start at $51.00 per month, with a cap of $170.38 per month.
+
+                            Specific eligibility requirements associated with Aid and Attendance include the following:
+
+                            The veteran must have served in active duty for a minimum of 90 days. At least one of those days must have been during a time of war, as defined by the VA to include World War II, the Korean conflict, the Vietnam era, and the Gulf War. For Gulf War veterans, service requirements are either 24 months of active duty service or the completion of an active-duty requirement, whichever comes first.
+                            The veteran must have been discharged under circumstances other than dishonorable.
+                            The veteran, if under age 65, must be classified by the VA as totally disabled.
+                            Surviving spouses do not need to meet the criteria outlined above. Instead, they must have been married to the veteran at the time of the veteran's death, must be unmarried at the time of application, and must not have remarried after November 1, 1990.
+                            In addition, the veteran’s household income, or that of the surviving spouse, must fall below the Maximum Allowable Pension Rate (MAPR), which is defined by the VA. To be eligible for Aid and Attendance benefits, the veteran or surviving spouse must also show documentation that assets fall below acceptable limits, also as defined by the VA – the current threshold stands at just over $129,000 in assets.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
+   
 </div>
 
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 
 
 

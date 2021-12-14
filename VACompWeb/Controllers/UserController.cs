@@ -8,6 +8,7 @@ using VACompWeb.Areas.Identity.Pages.Account.Manage;
 using VACompWeb.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading;
 
 
 namespace VACompWeb.Controllers
@@ -29,8 +30,7 @@ namespace VACompWeb.Controllers
 
         }
 
-        [TempData]
-        public string StatusMessage { get; set; }
+     
 
 
 
@@ -77,6 +77,7 @@ namespace VACompWeb.Controllers
 
         }
 
+       
         public async Task<IActionResult> UpdateProfileAsync(VAUser formUser)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -112,7 +113,7 @@ namespace VACompWeb.Controllers
 
          
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            
             return View("CompensationCalc", user);
         }
 

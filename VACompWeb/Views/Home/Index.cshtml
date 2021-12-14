@@ -1,8 +1,32 @@
-﻿@{
+﻿
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+
+<div class="container text-center m-5">
+    <div class="row">
+        <div class="col-md-7 col-sm-12">
+            <div class="mt-5">
+
+            <h1>Welcome</h1>
+            <h6>Veteran Disability Resource</h6>
+            <p>
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+            </p>
+            <a class="btn bg-info px-5 py-3" role="button" asp-controller="User" asp-action="CompensationCalc"> Calculate your compensation</a>
+        </div>
+    </div>
+            
+        <div class="col-md-5 col-sm-12">
+
+            <img src="~/Media/VeteranCivilian.jpg" alt="Veteran transistioning" width="525" height="600" class="img-responsive" />
+
+        </div>
+
+
+    </div>
 </div>
