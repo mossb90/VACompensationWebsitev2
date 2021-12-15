@@ -155,306 +155,307 @@ namespace VACompWeb.Services
             float compensation = 0;
             if (rating == 10) return DisabilityRating10;
             if (rating == 20) return DisabilityRating20;
+
             switch ((dependentStatusType, rating))
             {
                 // Veteran Only (no spouse or dependents)
-                case (1, 30):
+                case (0, 30):
                     compensation = VetOnly30;
                     break;
-                case (1, 40):
+                case (0, 40):
                     compensation = VetOnly40;
                     break;
-                case (1, 50):
+                case (0, 50):
                     compensation = VetOnly50;
                     break;
-                case (1, 60):
+                case (0, 60):
                     compensation = VetOnly60;
                     break;
-                case (1, 70):
+                case (0, 70):
                     compensation = VetOnly70;
                     break;
-                case (1, 80):
+                case (0, 80):
                     compensation = VetOnly80;
                     break;
-                case (1, 90):
+                case (0, 90):
                     compensation = VetOnly90;
                     break;
-                case (1, 100):
+                case (0, 100):
                     compensation = VetOnly100;
                     break;
                 // Veteran w/Spouse (no parents or children) 
-                case (2, 30):
+                case (1, 30):
                     compensation = VetSpouse30;
                     break;
-                case (2, 40):
+                case (1, 40):
                     compensation = VetSpouse40;
                     break;
-                case (2, 50):
+                case (1, 50):
                     compensation = VetSpouse50;
                     break;
-                case (2, 60):
+                case (1, 60):
                     compensation = VetSpouse60;
                     break;
-                case (2, 70):
+                case (1, 70):
                     compensation = VetSpouse70;
                     break;
-                case (2, 80):
+                case (1, 80):
                     compensation = VetSpouse80;
                     break;
-                case (2, 90):
+                case (1, 90):
                     compensation = VetSpouse90;
                     break;
-                case (2, 100):
+                case (1, 100):
                     compensation = VetSpouse100;
                     break;
                 // Veteran w/Spouse and 1 Parent Dependent (no children) 
-                case (3, 30):
+                case (2, 30):
                     compensation = VetSpouse1P30;
                     break;
-                case (3, 40):
+                case (2, 40):
                     compensation = VetSpouse1P40;
                     break;
-                case (3, 50):
+                case (2, 50):
                     compensation = VetSpouse1P50;
                     break;
-                case (3, 60):
+                case (2, 60):
                     compensation = VetSpouse1P60;
                     break;
-                case (3, 70):
+                case (2, 70):
                     compensation = VetSpouse1P70;
                     break;
-                case (3, 80):
+                case (2, 80):
                     compensation = VetSpouse1P80;
                     break;
-                case (3, 90):
+                case (2, 90):
                     compensation = VetSpouse1P90;
                     break;
-                case (3, 100):
+                case (2, 100):
                     compensation = VetSpouse1P100;
                     break;
                 // Veteran w/Spouse and 2 Parent Dependents (no children)
-                case (4, 30):
+                case (3, 30):
                     compensation = VetSpouse2P30;
                     break;
-                case (4, 40):
+                case (3, 40):
                     compensation = VetSpouse2P40;
                     break;
-                case (4, 50):
+                case (3, 50):
                     compensation = VetSpouse2P50;
                     break;
-                case (4, 60):
+                case (3, 60):
                     compensation = VetSpouse2P60;
                     break;
-                case (4, 70):
+                case (3, 70):
                     compensation = VetSpouse2P70;
                     break;
-                case (4, 80):
+                case (3, 80):
                     compensation = VetSpouse2P80;
                     break;
-                case (4, 90):
+                case (3, 90):
                     compensation = VetSpouse2P90;
                     break;
-                case (4, 100):
+                case (3, 100):
                     compensation = VetSpouse2P100;
                     break;
                 // Veteran w/1 Parent Dependent (no spouse or children)
-                case (5, 30):
+                case (4, 30):
                     compensation = Vet1P30;
                     break;
-                case (5, 40):
+                case (4, 40):
                     compensation = Vet1P40;
                     break;
-                case (5, 50):
+                case (4, 50):
                     compensation = Vet1P50;
                     break;
-                case (5, 60):
+                case (4, 60):
                     compensation = Vet1P60;
                     break;
-                case (5, 70):
+                case (4, 70):
                     compensation = Vet1P70;
                     break;
-                case (5, 80):
+                case (4, 80):
                     compensation = Vet1P80;
                     break;
-                case (5, 90):
+                case (4, 90):
                     compensation = Vet1P90;
                     break;
-                case (5, 100):
+                case (4, 100):
                     compensation = Vet1P100;
                     break;
                 // Veteran w/2 Parent Dependents (no spouse or children)
-                case (6, 30):
+                case (5, 30):
                     compensation = Vet2P30;
                     break;
-                case (6, 40):
+                case (5, 40):
                     compensation = Vet2P40;
                     break;
-                case (6, 50):
+                case (5, 50):
                     compensation = Vet2P50;
                     break;
-                case (6, 60):
+                case (5, 60):
                     compensation = Vet2P60;
                     break;
-                case (6, 70):
+                case (5, 70):
                     compensation = Vet2P70;
                     break;
-                case (6, 80):
+                case (5, 80):
                     compensation = Vet2P80;
                     break;
-                case (6, 90):
+                case (5, 90):
                     compensation = Vet2P90;
                     break;
-                case (6, 100):
+                case (5, 100):
                     compensation = Vet2P100;
                     break;
                 // Veteran w/Child (no spouse or parents)
-                case (7, 30):
+                case (6, 30):
                     compensation = Vet1C30;
                     break;
-                case (7, 40):
+                case (6, 40):
                     compensation = Vet1C40;
                     break;
-                case (7, 50):
+                case (6, 50):
                     compensation = Vet1C50;
                     break;
-                case (7, 60):
+                case (6, 60):
                     compensation = Vet1C60;
                     break;
-                case (7, 70):
+                case (6, 70):
                     compensation = Vet1C70;
                     break;
-                case (7, 80):
+                case (6, 80):
                     compensation = Vet1C80;
                     break;
-                case (7, 90):
+                case (6, 90):
                     compensation = Vet1C90;
                     break;
-                case (7, 100):
+                case (6, 100):
                     compensation = Vet1C100;
                     break;
                 // Veteran w/Spouse and Child (no parents)
-                case (8, 30):
+                case (7, 30):
                     compensation = VetSpouse1C30;
                     break;
-                case (8, 40):
+                case (7, 40):
                     compensation = VetSpouse1C40;
                     break;
-                case (8, 50):
+                case (7, 50):
                     compensation = VetSpouse1C50;
                     break;
-                case (8, 60):
+                case (7, 60):
                     compensation = VetSpouse1C60;
                     break;
-                case (8, 70):
+                case (7, 70):
                     compensation = VetSpouse1C70;
                     break;
-                case (8, 80):
+                case (7, 80):
                     compensation = VetSpouse1C80;
                     break;
-                case (8, 90):
+                case (7, 90):
                     compensation = VetSpouse1C90;
                     break;
-                case (8, 100):
+                case (7, 100):
                     compensation = VetSpouse1C100;
                     break;
                 // Veteran w/Spouse, Child and 1 Parent Dependent
-                case (9, 30):
+                case (8, 30):
                     compensation = VetSpouse1C1P30;
                     break;
-                case (9, 40):
+                case (8, 40):
                     compensation = VetSpouse1C1P40;
                     break;
-                case (9, 50):
+                case (8, 50):
                     compensation = VetSpouse1C1P50;
                     break;
-                case (9, 60):
+                case (8, 60):
                     compensation = VetSpouse1C1P60;
                     break;
-                case (9, 70):
+                case (8, 70):
                     compensation = VetSpouse1C1P70;
                     break;
-                case (9, 80):
+                case (8, 80):
                     compensation = VetSpouse1C1P80;
                     break;
-                case (9, 90):
+                case (8, 90):
                     compensation = VetSpouse1C1P90;
                     break;
-                case (9, 100):
+                case (8, 100):
                     compensation = VetSpouse1C1P100;
                     break;
                 // Veteran w/Spouse, Child and 2 Parent Dependents
-                case (10, 30):
+                case (9, 30):
                     compensation = VetSpouse1C2P30;
                     break;
-                case (10, 40):
+                case (9, 40):
                     compensation = VetSpouse1C2P40;
                     break;
-                case (10, 50):
+                case (9, 50):
                     compensation = VetSpouse1C2P50;
                     break;
-                case (10, 60):
+                case (9, 60):
                     compensation = VetSpouse1C2P60;
                     break;
-                case (10, 70):
+                case (9, 70):
                     compensation = VetSpouse1C2P70;
                     break;
-                case (10, 80):
+                case (9, 80):
                     compensation = VetSpouse1C2P80;
                     break;
-                case (10, 90):
+                case (9, 90):
                     compensation = VetSpouse1C2P90;
                     break;
-                case (10, 100):
+                case (9, 100):
                     compensation = VetSpouse1C2P100;
                     break;
                 // Veteran w/Child and 1 Parent Dependent (no spouse)
-                case (11, 30):
+                case (10, 30):
                     compensation = Vet1C1P30;
                     break;
-                case (11, 40):
+                case (10, 40):
                     compensation = Vet1C1P40;
                     break;
-                case (11, 50):
+                case (10, 50):
                     compensation = Vet1C1P50;
                     break;
-                case (11, 60):
+                case (10, 60):
                     compensation = Vet1C1P60;
                     break;
-                case (11, 70):
+                case (10, 70):
                     compensation = Vet1C1P70;
                     break;
-                case (11, 80):
+                case (10, 80):
                     compensation = Vet1C1P80;
                     break;
-                case (11, 90):
+                case (10, 90):
                     compensation = Vet1C1P90;
                     break;
-                case (11, 100):
+                case (10, 100):
                     compensation = Vet1C1P100;
                     break;
                 // Veteran w/Child and 2 Parent Dependents
-                case (12, 30):
+                case (11, 30):
                     compensation = Vet1C2P30;
                     break;
-                case (12, 40):
+                case (11, 40):
                     compensation = Vet1C2P40;
                     break;
-                case (12, 50):
+                case (11, 50):
                     compensation = Vet1C2P50;
                     break;
-                case (12, 60):
+                case (11, 60):
                     compensation = Vet1C2P60;
                     break;
-                case (12, 70):
+                case (11, 70):
                     compensation = Vet1C2P70;
                     break;
-                case (12, 80):
+                case (11, 80):
                     compensation = Vet1C2P80;
                     break;
-                case (12, 90):
+                case (11, 90):
                     compensation = Vet1C2P90;
                     break;
-                case (12, 100):
+                case (11, 100):
                     compensation = Vet1C2P100;
                     break;
                 default:
