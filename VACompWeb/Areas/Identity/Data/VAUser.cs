@@ -44,12 +44,14 @@ namespace VACompWeb.Areas.Identity.Data
         [PersonalData]
         [Required]
         [Column(TypeName = "int")]
+       
         public int VetID { get; set; }
 
         [PersonalData]
         [Required]
         [Column(TypeName = "nvarchar(50)")]
         [MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
+        [Display(Name = "First Name ")]
         public string FirstName { get; set; }
 
 
@@ -57,40 +59,47 @@ namespace VACompWeb.Areas.Identity.Data
         [Required]
         [Column(TypeName = "nvarchar(50)")]
         [MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [PersonalData]
         [Required]
         [Range(10, 100)]
         //[RegularExpression("[1 - 9][0 - 9] * 0")]
+        [Display(Name = "Disability Rating")]
         public int DisabilityRating { get; set; }
 
 
         [PersonalData]
         [Required]
         [Column(TypeName = "nvarchar(50)")]
+        [Display(Name = "Dependency Status")]
         public DepStatus DependencyStatus { get; set; }
 
 
         [PersonalData]
         [Required]
+        [Display(Name = "Additional number of Children under 18")]
         public int AddChildUnder18 { get; set; }
 
 
         [PersonalData]
         [Required]
+        [Display(Name = "Additional number of Children above 18")]
         public int AddChild18Plus { get; set; }
-
-        [PersonalData]
-        [Required]
-        [Column(TypeName = "bit")]
-        public bool AidSupport { get; set; }
 
 
         [PersonalData]
         [Column(TypeName = "decimal")]
+        [Display(Name = "Monthly Compensation")]
         public float MonthlyComp { get; set; }
-       
+
+        [PersonalData]
+        [Required]
+        [Display(Name = "Qualify for Aid Support? (Check) ")]
+        //[Column(TypeName = "bit")]
+        public bool AidSupport { get; set; }
+
 
 
         //public VAUser User { get; internal set; }

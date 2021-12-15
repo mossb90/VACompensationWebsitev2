@@ -10,3 +10,20 @@ $("#Update").click(function () {
 });
 
 
+function changetextbox()
+{
+    if (document.getElementById("depstatus").value < 6) {
+        document.getElementById("childunder").disabled = true;
+        document.getElementById("childunder").value = 0;
+        document.getElementById("childplus").disabled = true;
+        document.getElementById("childplus").value = 0;
+    }
+    else
+    {
+        document.getElementById("childunder").disabled = false;
+        document.getElementById("childplus").disabled = false;
+    }
+    
+}
+
+

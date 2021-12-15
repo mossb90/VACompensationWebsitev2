@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-   
+
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-info">
 
             <!--  Show this only on mobile to medium screens  -->
@@ -29,10 +29,10 @@
                         <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Resources">Resources</a>
+                        <a class="nav-link "  href="#footer" >Resources</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                        <a class="nav-link " href="#footer">Contact Us</a>
                     </li>
 
 
@@ -42,7 +42,7 @@
                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="CompensationCalc">Compensation Calculator</a>
                             <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="RatingCalc">Rating Calculator</a>
                         </div>
-                    
+
                 </ul>
 
 
@@ -56,6 +56,7 @@
                 </ul>
 
             </div>
+        </nav>
 
     </header>
 
@@ -67,11 +68,83 @@
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - VACompWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>*@
+
+
+
+
+
+
+
+    <footer class="text-left  bg-info text-white" id="footer">
+        
+            
+        
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container  mt-3 ">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                   
+                    <div class="col-md-5 col-lg-5 col-xl-5  mt-4  text-left">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+
+                        <p class="text-white-50"> Please use the links below to find out more information about the VA Claims disability process</p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/about-disability-ratings/">About Disability Ratings</a></p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/effective-date/">Effective Dates</a></p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/compensation-rates/">Disability Compensation Rates</a></p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/survivor-dic-rates/">Survivor DIC Rates</a></p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/parent-dic-rates/">Parents DIC Rates</a></p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/va-claim-exam/">VA Claim Exam (C&P Exam)</a></p>
+                        <p> <a class="text-white" href="https://www.va.gov/disability/get-help-filing-claim/">Get help filing a claim</a></p>
+                        
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-6 col-xl-6 mt-4 text-left">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mt-2">
+                            Contact us
+                        </h6>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-white-50">We'll never share your email with anyone else.</small>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-light"> Send</button>
+                        </form>
+                        <h6 class="text-uppercase fw-bold mt-4">
+                             Phone Numbers
+                            </h6>
+                            <p><i class="fas fa-phone ml-3"></i> + 01 234 567 88</p>
+                            <p><i class="fas fa-print ml-3"></i> + 01 234 567 89</p>
+</div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+       
+    </footer>
+    <!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
