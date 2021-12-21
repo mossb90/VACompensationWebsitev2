@@ -112,7 +112,7 @@ namespace VACompWeb.Controllers
 
 
          
-            await _signInManager.RefreshSignInAsync(user);
+            //await _signInManager.RefreshSignInAsync(user);
             
             return View("CompensationCalc", user);
         }
